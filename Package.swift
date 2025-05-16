@@ -4,18 +4,18 @@
 import PackageDescription
 
 let package = Package(
-    name: "ZLynkSDKIosPackage",
+    name: "ZLynkSDK",
+    platforms: [
+        .iOS(.v13)
+    ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(
-            name: "ZLynkSDKIosPackage",
-            targets: ["ZLynkSDKIosPackage"]),
+        .library(name: "ZLynkSDK", targets: ["ZLynkSDK"])
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "ZLynkSDKIosPackage"),
-
+        .binaryTarget(
+            name: "ZLynkSDK",
+            url: "https://github.com/PupilMesh/ZLynkSDK-IOS/releases/download/v0.0.1/ZLynkSDK.xcframework.zip",
+            checksum: "0009728fde44fdc366bd9c7b30d63722b7776ce76daf3bab76b42ffdc6c11ddc"
+        )
     ]
 )
